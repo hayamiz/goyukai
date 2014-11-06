@@ -13,7 +13,7 @@ import (
 func main() {
     runtime.GOMAXPROCS(runtime.NumCPU())
 
-    TRY := 5
+    TRY := 10
 
     fmt.Printf("#N	seq_time	par_time\n")
 
@@ -73,7 +73,7 @@ func prefixsum(input []int, output []int) {
 func par_prefixsum(input []int, output []int, tmp []int) {
     batchSize := 256
 
-    if len(input) <= 1024*1024 {
+    if len(input) <= 0 {
         prefixsum(input, output)
     } else {
         // y := make([]int, len(input) / 2)
